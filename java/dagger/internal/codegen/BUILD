@@ -109,6 +109,7 @@ java_library(
         "package-info.java",
     ],
     plugins = CODEGEN_PLUGINS,
+    javacopts = ["-Xep:BetaApi:OFF"],
     tags = ["maven:merged"],
     deps = CODEGEN_DEPS,
 )

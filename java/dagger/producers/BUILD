@@ -37,7 +37,7 @@ filegroup(
 java_library(
     name = "producers",
     srcs = SRCS,
-    javacopts = SOURCE_7_TARGET_7 + DOCLINT_HTML_AND_SYNTAX + DOCLINT_REFERENCES,
+    javacopts = SOURCE_7_TARGET_7 + DOCLINT_HTML_AND_SYNTAX + DOCLINT_REFERENCES+ ["-Xep:BetaApi:OFF"],
     tags = ["maven_coordinates=com.google.dagger:dagger-producers:" + POM_VERSION],
     exports = [
         # TODO(dpb): Don't export any of Guava.

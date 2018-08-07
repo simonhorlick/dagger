@@ -36,7 +36,7 @@ filegroup(
 java_library(
     name = "model",
     srcs = [":model-srcs"],
-    javacopts = DOCLINT_HTML_AND_SYNTAX + DOCLINT_REFERENCES,
+    javacopts = DOCLINT_HTML_AND_SYNTAX + DOCLINT_REFERENCES + ["-Xep:BetaApi:OFF"],
     deps = [
         "//java/dagger:core",
         "//java/dagger/internal/codegen:shared-with-spi",
@@ -53,6 +53,7 @@ java_library(
     name = "internal-proxies",
     srcs = INTERNAL_PROXIES,
     tags = ["maven:merged"],
+    javacopts = ["-Xep:BetaApi:OFF"],
     deps = [
         ":model",
         "@google_bazel_common//third_party/java/guava",
